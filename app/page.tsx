@@ -5,6 +5,8 @@ import SearchBar from "./components/SearchBar";
 import TabsHeader from "./components/TabsHeader";
 import RadioButtons from "./components/RadioButtons";
 import Tab from "./components/Tab";
+import { assets } from "@/content/constants";
+import Featured from "./components/Featured";
 
 const areas = ["World", "EMEA", "APAC", "LATAM", "NA"];
 const tabs = ["Featured", "KPI", "Layouts", "Storyboards"];
@@ -41,7 +43,9 @@ const Home = () => {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
-        <Tab active={activeTab === "Featured"}>AA</Tab>
+        <Tab active={activeTab === "Featured"}>
+          <Featured assets={assets} />
+        </Tab>
         <Tab active={activeTab === "KPI"}>BB</Tab>
         <Tab active={activeTab === "Layouts"}>CC</Tab>
         <Tab active={activeTab === "Storyboards"}>DD</Tab>

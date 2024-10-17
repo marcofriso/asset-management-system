@@ -8,7 +8,7 @@ const Tab = ({
   children: React.ReactNode;
 }) => {
   if (!active) return null;
-  return <div>{children}</div>;
+  return <div className="w-full">{children}</div>;
 };
 
 export default Tab;

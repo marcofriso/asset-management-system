@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
-
-interface TabsProps {
+interface TabsHeaderProps {
   tabs: string[];
-  onTabChange: (selectedTab: string) => void;
+  setActiveTab: (selectedTab: string) => void;
+  activeTab: string;
 }
 
-const Tabs: React.FC<TabsProps> = ({ tabs, onTabChange }) => {
-  const [activeTab, setActiveTab] = useState<string>(tabs[0]);
-
+const TabsHeader: React.FC<TabsHeaderProps> = ({
+  tabs,
+  activeTab,
+  setActiveTab,
+}) => {
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
-    onTabChange(tab);
   };
 
   return (
@@ -32,4 +32,4 @@ const Tabs: React.FC<TabsProps> = ({ tabs, onTabChange }) => {
   );
 };
 
-export default Tabs;
+export default TabsHeader;

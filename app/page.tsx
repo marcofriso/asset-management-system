@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
-import Tabs from "./components/Tabs";
+import TabsHeader from "./components/TabsHeader";
 import RadioButtons from "./components/RadioButtons";
+import Tab from "./components/Tab";
+
+const areas = ["World", "EMEA", "APAC", "LATAM", "NA"];
+const tabs = ["Featured", "KPI", "Layouts", "Storyboards"];
 
 const Home = () => {
   const [query, setQuery] = useState<string>("");
-  const [selectedArea, setSelectedArea] = useState<string>("World");
-
-  const handleTabChange = (selectedTab: string) => {
-    console.log("Selected tab:", selectedTab);
-  };
+  const [selectedArea, setSelectedArea] = useState<string>(areas[0]);
+  const [activeTab, setActiveTab] = useState<string>(tabs[0]);
 
   const handleReset = () => {
     setQuery("");
@@ -25,7 +26,7 @@ const Home = () => {
         <p>Browse for assets needed to report and present analysis</p>
         <SearchBar query={query} setQuery={setQuery} />
         <RadioButtons
-          areas={["World", "EMEA", "APAC", "LATAM", "NA"]}
+          areas={areas}
           setSelectedArea={setSelectedArea}
           selectedArea={selectedArea}
         />
@@ -35,10 +36,15 @@ const Home = () => {
         >
           Reset
         </button>
-        <Tabs
-          tabs={["Featured", "KPI", "Layouts", "Storyboards"]}
-          onTabChange={handleTabChange}
+        <TabsHeader
+          tabs={tabs}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
         />
+        <Tab active={activeTab === "Featured"}>AA</Tab>
+        <Tab active={activeTab === "KPI"}>BB</Tab>
+        <Tab active={activeTab === "Layouts"}>CC</Tab>
+        <Tab active={activeTab === "Storyboards"}>DD</Tab>
       </div>
     </div>
   );

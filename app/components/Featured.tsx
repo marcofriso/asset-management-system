@@ -12,11 +12,17 @@ const Featured = ({
   selectedAssets: Asset[];
   setSelectedAssets: (assets: Asset[]) => void;
 }) => {
-  const [clickedAsset, setClickedAsset] = useState<Asset | null>(null);
+  const [divClickedAsset, setDivClickedAsset] = useState<Asset | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDivClick = (asset: Asset) => {
     setIsOpen(true);
+
+    setDivClickedAsset(asset);
+  };
+
+  const handleCheckboxClick = (event: React.MouseEvent, asset: Asset) => {
+    event.stopPropagation();
 
     const isSelected = selectedAssets.includes(asset);
     if (isSelected) {
@@ -26,16 +32,10 @@ const Featured = ({
     }
   };
 
-  const handleCheckboxClick = (event: React.MouseEvent, asset: Asset) => {
-    event.stopPropagation();
-
-    setClickedAsset(asset);
-  };
-
   return (
     <div className="w-full grid md:grid-cols-2 gap-4">
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-        <AssetComponent asset={clickedAsset} />
+        <AssetComponent asset={divClickedAsset} />
       </Modal>
       {assets.map((asset) => (
         <div

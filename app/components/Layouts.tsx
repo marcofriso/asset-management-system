@@ -1,4 +1,7 @@
 import { KPI, Layout, Visualization, KPIName } from "@/content/types";
+import TextView from "./Layouts/TextView";
+import ColumnView from "./Layouts/ColumnView";
+import PieView from "./Layouts/PieView";
 
 interface LayoutProps {
   selectedKpis: KPI[];
@@ -6,7 +9,6 @@ interface LayoutProps {
   setSelectedLayouts: (layouts: Layout[]) => void;
 }
 
-const TextComponent = () => <div className="bg-blue-100 p-2">Text View</div>;
 const ColumnComponent = () => (
   <div className="bg-green-100 p-2">Column View</div>
 );
@@ -27,14 +29,14 @@ const Layouts = ({
     setSelectedLayouts(updatedLayouts);
   };
 
-  const renderSelectedComponent = (type: Visualization) => {
+  const renderSelectedComponent = (type: Visualization, kpi: KPI) => {
     switch (type) {
       case Visualization.TEXT:
-        return <TextComponent />;
+        return <TextView realised={70} planned={100} kpi={kpi} />;
       case Visualization.COLUMN:
-        return <ColumnComponent />;
+        return <ColumnView realised={70} planned={100} kpi={kpi} />;
       case Visualization.PIE:
-        return <PieComponent />;
+        return <PieView realised={70} planned={100} kpi={kpi} />;
       default:
         return null;
     }
@@ -74,7 +76,8 @@ const Layouts = ({
             </div>
             <div className="mt-4">
               {renderSelectedComponent(
-                selectedLayout?.visualization || Visualization.TEXT
+                selectedLayout?.visualization || Visualization.TEXT,
+                kpi
               )}
             </div>
           </div>

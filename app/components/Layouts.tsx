@@ -71,7 +71,6 @@ const Layouts = ({
                 </label>
               ))}
             </div>
-
             <div className="">
               {renderSelectedComponent(
                 selectedLayout?.visualization || Visualization.TEXT,

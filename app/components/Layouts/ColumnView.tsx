@@ -35,7 +35,7 @@ const ColumnView = ({
           </div>
           <p className="font-bold text-gray-700 mt-2">Planned:</p>
           <p className="font-bold text-gray-700">
-            {realised} {kpi.unit}
+            {planned} {kpi.unit}
           </p>
         </div>
       </div>

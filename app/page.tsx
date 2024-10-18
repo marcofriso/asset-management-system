@@ -10,6 +10,7 @@ import Featured from "./components/Featured";
 import type { Asset, KPI, Layout } from "@/content/types";
 import KPIs from "./components/KPIs";
 import Layouts from "./components/Layouts";
+import Storyboards from "./components/Storyboards";
 
 const areas = ["World", "EMEA", "APAC", "LATAM", "NA"];
 const tabs = ["Featured", "KPI", "Layouts", "Storyboards"];
@@ -30,6 +31,7 @@ const Home = () => {
 
     setSelectedAssets([]);
     setSelectedKPIs([]);
+    setSelectedLayouts([]);
   };
 
   const filteredAssets = assets.filter((asset) => {
@@ -83,7 +85,14 @@ const Home = () => {
             selectedKpis={selectedKPIs}
           />
         </Tab>
-        <Tab active={activeTab === "Storyboards"}>DD</Tab>
+        <Tab active={activeTab === "Storyboards"}>
+          <Storyboards
+            assets={selectedAssets}
+            kpis={selectedKPIs}
+            layouts={selectedLayouts}
+            area={selectedArea}
+          />
+        </Tab>
       </div>
     </div>
   );

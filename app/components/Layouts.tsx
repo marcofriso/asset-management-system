@@ -9,11 +9,6 @@ interface LayoutProps {
   setSelectedLayouts: (layouts: Layout[]) => void;
 }
 
-const ColumnComponent = () => (
-  <div className="bg-green-100 p-2">Column View</div>
-);
-const PieComponent = () => <div className="bg-red-100 p-2">Pie View</div>;
-
 const Layouts = ({
   selectedKpis,
   selectedLayouts,
@@ -53,14 +48,16 @@ const Layouts = ({
   }
 
   return (
-    <div className="p-4">
+    <div className="flex flex-col gap-5">
       {selectedKpis.map((kpi) => {
         const selectedLayout = selectedLayouts.find((l) => l.kpi === kpi.name);
 
         return (
-          <div key={kpi.id} className="border p-2 mb-4">
-            <h3 className="font-bold mb-2 capitalize">{kpi.name}</h3>
-            <div className="flex gap-4">
+          <div
+            key={kpi.id}
+            className="grid grid-cols-[calc(50%-20px)_calc(50%+20px)] p-4 bg-white rounded-lg border text-slate-600 w-full cursor-pointer hover:shadow-lg"
+          >
+            <div className="flex gap-4 my-auto">
               {Object.values(Visualization).map((option) => (
                 <label key={option} className="flex items-center">
                   <input
@@ -74,7 +71,8 @@ const Layouts = ({
                 </label>
               ))}
             </div>
-            <div className="mt-4">
+
+            <div className="">
               {renderSelectedComponent(
                 selectedLayout?.visualization || Visualization.TEXT,
                 kpi

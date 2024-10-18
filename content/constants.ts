@@ -1028,7 +1028,7 @@ const kpis: KPI[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     calculation: "Sales = Number of Units Sold x Price per Unit",
-    unit: "million USD",
+    unit: "mil USD",
   },
   {
     id: 2,
@@ -1037,7 +1037,7 @@ const kpis: KPI[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     calculation:
       "Total Cost = Asset Cost + Depreciation + Amortization + Labor Cost + Materials Cost + Other Cost",
-    unit: "million USD",
+    unit: "mil USD",
   },
   {
     id: 3,
@@ -1045,7 +1045,7 @@ const kpis: KPI[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     calculation: "Profit = Revenue - Total Cost",
-    unit: "million USD",
+    unit: "mil USD",
   },
 ];
 

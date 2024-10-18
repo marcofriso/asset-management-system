@@ -13,17 +13,23 @@ const TextView = ({
   const percentage = ((realised - planned) / planned) * 100;
 
   return (
-    <div className="p-4 bg-blue-100 rounded">
-      <h4 className="text-xl">{kpi.name}</h4>
-      <p className="font-bold">
-        Realized: {realised} {kpi.unit}
-      </p>
-      <p className="font-bold">
-        Planned: {planned} {kpi.unit}
-      </p>
-      <p className={difference >= 0 ? "text-green-500" : "text-red-500"}>
-        Difference: {difference} ({percentage.toFixed(2)}%)
-      </p>
+    <div className="flex p-4 bg-slate-100 border rounded-lg">
+      <h4 className="text-xl font-bold capitalize">{kpi.name}</h4>
+      <div className="mx-auto">
+        <p className="font-bold text-blue-700">
+          Realized: {realised} {kpi.unit}
+        </p>
+        <p className="font-bold text-gray-700">
+          Planned: {planned} {kpi.unit}
+        </p>
+        <p
+          className={`font-bold mt-2 ${
+            difference >= 0 ? "text-green-500" : "text-red-500"
+          }`}
+        >
+          Difference: {difference} ({percentage.toFixed(2)}%)
+        </p>
+      </div>
     </div>
   );
 };

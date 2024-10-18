@@ -1,18 +1,18 @@
-type Asset = {
+interface Asset {
   id: number;
   name: string;
   description: string;
   areas: string[];
   businessQuestions: BusinessQuestion[];
-  kpis: KPI[];
-};
+  kpis: AssetKPI[];
+}
 
-type BusinessQuestion = {
+interface BusinessQuestion {
   title: string;
   description: string;
-};
+}
 
-type KPI = {
+interface AssetKPI {
   id: string;
   name: string;
   values: {
@@ -21,6 +21,32 @@ type KPI = {
       planned: number;
     };
   };
-};
+}
 
-export type { Asset, KPI };
+enum KPIName {
+  SALES = "sales",
+  COST = "cost",
+  PROFIT = "profit",
+}
+
+enum Visualization {
+  TEXT = "text",
+  COLUMN = "column",
+  PIE = "pie",
+}
+
+interface KPI {
+  id: number;
+  name: KPIName;
+  description: string;
+  calculation: string;
+  unit: string;
+}
+
+interface Layout {
+  kpi: KPIName;
+  visualization: Visualization;
+}
+
+export type { Asset, KPI, Layout };
+export { Visualization, KPIName };

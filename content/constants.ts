@@ -1,4 +1,6 @@
-const assets = [
+import { Asset, KPI, KPIName } from "./types";
+
+const assets: Asset[] = [
   {
     id: 1,
     name: "Product 1",
@@ -56,7 +58,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 580,
@@ -157,7 +159,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 340,
@@ -246,7 +248,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 500,
@@ -347,7 +349,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 580,
@@ -452,7 +454,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 320,
@@ -553,7 +555,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 420,
@@ -662,7 +664,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 620,
@@ -767,7 +769,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 620,
@@ -864,7 +866,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 300,
@@ -965,7 +967,7 @@ const assets = [
       },
       {
         id: "2",
-        name: "revenue",
+        name: "cost",
         values: {
           World: {
             realised: 420,
@@ -1019,4 +1021,32 @@ const assets = [
   },
 ];
 
-export { assets };
+const kpis: KPI[] = [
+  {
+    id: 1,
+    name: KPIName.SALES,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    calculation: "Sales = Number of Units Sold x Price per Unit",
+    unit: "million USD",
+  },
+  {
+    id: 2,
+    name: KPIName.COST,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    calculation:
+      "Total Cost = Asset Cost + Depreciation + Amortization + Labor Cost + Materials Cost + Other Cost",
+    unit: "million USD",
+  },
+  {
+    id: 3,
+    name: KPIName.PROFIT,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    calculation: "Profit = Revenue - Total Cost",
+    unit: "million USD",
+  },
+];
+
+export { assets, kpis };

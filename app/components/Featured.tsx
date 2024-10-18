@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { Asset } from "@/content/types";
 import Modal from "./Modal";
 import AssetComponent from "./Asset";
@@ -21,7 +21,7 @@ const Featured = ({
     setDivClickedAsset(asset);
   };
 
-  const handleCheckboxClick = (event: React.MouseEvent, asset: Asset) => {
+  const handleCheckboxClick = (event: React.ChangeEvent, asset: Asset) => {
     event.stopPropagation();
 
     const isSelected = selectedAssets.includes(asset);
@@ -45,9 +45,14 @@ const Featured = ({
         >
           <div
             className="flex gap-3 w-fit"
-            onClick={(event) => handleCheckboxClick(event, asset)}
+            onClick={(event) => event.stopPropagation()}
           >
-            <input type="checkbox" id={`asset ${asset.id}`} />
+            <input
+              type="checkbox"
+              id={`asset ${asset.id}`}
+              checked={selectedAssets.includes(asset)}
+              onChange={(event) => handleCheckboxClick(event, asset)}
+            />
             <label
               htmlFor={`asset ${asset.id}`}
               className="text-md font-semibold"

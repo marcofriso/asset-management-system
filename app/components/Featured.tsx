@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Asset } from "@/content/types";
-import Modal from "./Modal";
+import Modal from "./ui/Modal";
 import AssetComponent from "./Asset";
 
 const Featured = ({

@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SearchBar from "./components/SearchBar";
-import TabsHeader from "./components/TabsHeader";
-import RadioButtons from "./components/RadioButtons";
-import Tab from "./components/Tab";
+import SearchBar from "./components/ui/SearchBar";
+import TabsHeader from "./components/ui/TabsHeader";
+import RadioButtons from "./components/ui/RadioButtons";
+import Tab from "./components/ui/Tab";
 import { assets } from "@/content/constants";
 import Featured from "./components/Featured";
 import type { Asset, KPI, Layout } from "@/content/types";

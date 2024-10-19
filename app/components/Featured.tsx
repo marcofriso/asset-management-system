@@ -32,6 +32,10 @@ const Featured = ({
     }
   };
 
+  if (assets.length === 0) {
+    return <p>No assets found</p>;
+  }
+
   return (
     <div className="w-full grid md:grid-cols-2 gap-4">
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>

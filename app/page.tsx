@@ -50,7 +50,16 @@ const Home = () => {
   return (
     <div className="mx-auto max-w-[1000px]">
       <div className="flex flex-col items-center justify-items-center min-h-screen pb-20 gap-6 p-4 md:p-6 lg:p-20">
-        <h1 className="text-5xl font-black text-w">Library</h1>
+        <div className="text-center">
+          <h1 className="text-5xl font-black text-w mb-2">Library</h1>
+          <a
+            className="text-slate-500"
+            href="https://www.marcofriso.com/"
+            target="_blank"
+          >
+            www.marcofriso.com
+          </a>
+        </div>
         <p>Browse for assets needed to report and present analysis</p>
         <SearchBar query={query} setQuery={setQuery} />
         <RadioButtons

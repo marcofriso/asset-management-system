@@ -43,7 +43,7 @@ const ColumnView = ({
       <h4 className="text-xl font-bold capitalize">{kpi.name}</h4>
       <div className="flex justify-around items-end w-full">
         <canvas ref={canvasRef} width={120} height={120}></canvas>
-        <div className="text-center">
+        <div className="text-center my-auto">
           <p className="font-bold text-blue-700">
             Realized: {realised} {kpi.unit}
           </p>

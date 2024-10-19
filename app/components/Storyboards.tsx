@@ -63,9 +63,9 @@ const Storyboards = ({
         .map((asset) => (
           <div
             key={asset.id}
-            className="grid grid-cols-[calc(50%-20px)_calc(50%+20px)] p-4 bg-white rounded-lg border text-slate-600 w-full cursor-pointer hover:shadow-lg"
+            className="grid grid-cols-[calc(40%-20px)_calc(60%+20px)] p-4 bg-white rounded-lg border text-slate-600 w-full cursor-pointer hover:shadow-lg"
           >
-            <h3 className="text-xl font-bold">{asset.name}</h3>
+            <h3 className="text-xl font-bold my-auto ml-4">{asset.name}</h3>
             <div className="grid grid-cols-1 gap-4">
               {kpis
                 .sort((a, b) => a.id - b.id)

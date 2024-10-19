@@ -55,9 +55,9 @@ const Layouts = ({
         return (
           <div
             key={kpi.id}
-            className="grid grid-cols-[calc(50%-20px)_calc(50%+20px)] p-4 bg-white rounded-lg border text-slate-600 w-full cursor-pointer hover:shadow-lg"
+            className="grid grid-cols-[calc(40%-20px)_calc(60%+20px)] p-4 bg-white rounded-lg border text-slate-600 w-full cursor-pointer hover:shadow-lg"
           >
-            <div className="flex gap-4 my-auto">
+            <div className="flex gap-4 my-auto ml-4">
               {Object.values(Visualization).map((option) => (
                 <label key={option} className="flex items-center">
                   <input

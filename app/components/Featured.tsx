@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Asset } from "@/content/types";
 import Modal from "./Modal";
 import AssetComponent from "./Asset";

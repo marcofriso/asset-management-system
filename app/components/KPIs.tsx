@@ -1,4 +1,3 @@
-import React from "react";
 import type { KPI } from "@/content/types";
 import { kpis } from "@/content/constants";
 

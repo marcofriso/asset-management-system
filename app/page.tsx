@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "./components/SearchBar";
 import TabsHeader from "./components/TabsHeader";
 import RadioButtons from "./components/RadioButtons";
@@ -35,15 +35,17 @@ const Home = () => {
   };
 
   const filteredAssets = assets.filter((asset) => {
-    // if (selectedAssets.length > 0) {
-    //   setSelectedAssets([]);
-    // }
-
     return (
       asset.name.toLowerCase().includes(query.toLowerCase()) &&
       (selectedArea === "World" || asset.areas.includes(selectedArea))
     );
   });
+
+  useEffect(() => {
+    if (selectedAssets.length > 0) {
+      setSelectedAssets([]);
+    }
+  }, [query, selectedArea]);
 
   return (
     <div className="mx-auto max-w-[1000px]">

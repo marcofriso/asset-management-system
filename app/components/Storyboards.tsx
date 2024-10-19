@@ -1,4 +1,4 @@
-import { KPI, Layout, Visualization, KPIName, Asset } from "@/content/types";
+import { KPI, Layout, Visualization, Asset } from "@/content/types";
 import TextView from "./Layouts/TextView";
 import ColumnView from "./Layouts/ColumnView";
 import PieView from "./Layouts/PieView";
@@ -51,6 +51,10 @@ const Storyboards = ({
         return null;
     }
   };
+
+  if (!assets || assets.length === 0 || !kpis || kpis.length === 0) {
+    return <p>Please select at least one asset and one KPI.</p>;
+  }
 
   return (
     <div className="flex flex-col gap-4">

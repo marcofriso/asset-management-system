@@ -1,5 +1,3 @@
-"use client";
-
 interface TabsHeaderProps {
   tabs: string[];
   setActiveTab: (selectedTab: string) => void;

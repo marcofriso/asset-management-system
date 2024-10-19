@@ -64,7 +64,10 @@ const Layouts = ({
                     type="radio"
                     name={`kpi-${kpi.id}`}
                     value={option}
-                    checked={selectedLayout?.visualization === option}
+                    checked={
+                      selectedLayout?.visualization === option ||
+                      (!selectedLayout && option === Visualization.TEXT)
+                    }
                     onChange={() => handleSelection(kpi.name, option)}
                   />
                   <span className="ml-2">{visualizationLabels[option]}</span>

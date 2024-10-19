@@ -1,5 +1,4 @@
 import type { Asset } from "@/content/types";
-import React from "react";
 
 const Asset = ({ asset }: { asset: Asset | null }) => {
   if (!asset) {

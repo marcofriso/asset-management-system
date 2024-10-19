@@ -1,5 +1,3 @@
-"use client";
-
 interface RadioButtonsProps {
   areas: string[];
   setSelectedArea: (area: string) => void;

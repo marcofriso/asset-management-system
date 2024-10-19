@@ -1,5 +1,5 @@
-import { KPI } from "@/content/types";
 import { useEffect, useRef } from "react";
+import { KPI } from "@/content/types";
 
 const ColumnView = ({
   realised,
